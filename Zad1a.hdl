@@ -1,0 +1,8 @@
+CHIP Zad1a{
+	IN x, y, z;
+	OUT out;
+	
+	PARTS:
+	Nand(a = x, b = y, out = out);
+
+}
