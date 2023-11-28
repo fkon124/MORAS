@@ -1,0 +1,12 @@
+CHIP Log2 {
+	IN in[16];
+	OUT out[16];
+
+	PARTS:
+	Clz(in = in, out = inv);
+	Not16(in = inv, out = invNeg);
+
+	Add16(a = invNeg, b[0..3] = false, b[4] = true, b[5..15] = false, out = e);
+
+	Mux16(a = e, b[0..15] = true, sel = in[15], out = out);
+}
